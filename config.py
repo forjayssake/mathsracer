@@ -20,9 +20,7 @@ gameConfig = {
     'max_multiple_value': 5,
 
     # computer difficulty: computer makes mistake if rand over f value
-    # random.uniform(0, 1)
     'ai_error_level_1': 0.5,
     'ai_error_level_2': 0.7,
     'ai_error_level_3': 0.9,
-
 }

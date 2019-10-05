@@ -2,7 +2,7 @@ import random
 from config import gameConfig as config
 
 
-def get_next_sum():
+def get_next_sum() -> dict:
     """
     return a new random sum, consisting of a dictionary containing:
     a randomly selected mathematical operator
@@ -12,7 +12,7 @@ def get_next_sum():
 
     sum = {'operator': fetch_operator()}
     sum['values'] = fetch_integers_for_operator(sum['operator'][0])
-    sum['result'] = calculate_answer(sum)
+    sum['answer'] = calculate_answer(sum)
     return sum
 
 
@@ -72,7 +72,7 @@ def fetch_operator() -> tuple:
     return random.choice(list(config['sum_operators'].keys()))
 
 
-def fetch_random_number():
+def fetch_random_number() -> int:
     """
     fetch a number randomly from the list of available numbers
     """
