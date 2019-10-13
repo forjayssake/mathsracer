@@ -17,8 +17,6 @@ while not done:
         if event.type == pygame.QUIT:
             done = True
 
-    pygame.display.flip()
-
     # select number of players
 
     # select difficultly if one player
@@ -27,3 +25,7 @@ while not done:
 
     # start game loop
 
+    screen.fill((0, 0, 0))
+
+    pygame.display.flip()
+    pygame.clock.tick(60)

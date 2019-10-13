@@ -17,7 +17,18 @@ def get_next_sum() -> dict:
 
 
 def calculate_answer(sum: dict) -> int:
-    return eval(sum['values'][0] + sum['operator'] + sum['values'][1])
+    operator = sum['operator']
+
+    if '+' == operator:
+        return sum['values'][0] + sum['values'][1]
+    elif '-' == operator:
+        return sum['values'][0] - sum['values'][1]
+    elif '/' == operator:
+        return sum['values'][0] / sum['values'][1]
+    elif '*' == operator:
+        return sum['values'][0] * sum['values'][1]
+
+    raise ValueError('Operator: ' + operator + 'is invalid')
 
 
 def fetch_integers_for_operator(operator: str) -> tuple:
