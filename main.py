@@ -17,13 +17,14 @@ while not done:
         if event.type == pygame.QUIT:
             done = True
 
-    # select number of players
+    # draw start and finsih lines
 
-    # select difficultly if one player
+    # divide between lines into x segments
 
-    # select track size
+    # draw two rectangles before first line
 
-    # start game loop
+
+    
 
     screen.fill((0, 0, 0))
 

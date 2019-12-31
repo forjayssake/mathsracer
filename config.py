@@ -19,7 +19,7 @@ gameConfig = {
     # highest number to allow for one value in multiplications
     'max_multiple_value': 5,
 
-    # computer difficulty: computer makes mistake if rand over f value
+    # computer difficulty: computer makes mistake if rand over x value
     'ai_error_level_1': 0.5,
     'ai_error_level_2': 0.7,
     'ai_error_level_3': 0.9,

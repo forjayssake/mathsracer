@@ -3,7 +3,8 @@ import random
 
 
 def ai_should_fail(level: int)-> bool:
-    threshold  = config['ai_error_level_' + str(level)]
+    # this should check the difficulty level is valid in the config
+    threshold = config['ai_error_level_' + str(level)]
 
     return random.uniform(0, 1) > threshold
 
@@ -22,6 +23,7 @@ def answer_is_correct(sum: dict, answer: int)->bool:
     :param answer:
     :return: bool
     """
+    return sum['answer'] == answer
 
 def driver_crash(player: dict):
     """
