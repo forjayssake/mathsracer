@@ -1,6 +1,6 @@
 from config import gameConfig as config
 import random
-
+from car import Car
 
 def ai_should_fail(level: int)-> bool:
     # this should check the difficulty level is valid in the config
