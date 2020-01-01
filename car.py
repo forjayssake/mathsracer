@@ -1,13 +1,11 @@
 import pygame
 import os
 
-# it is better to have an extra variable, than an extremely long line.
-img_path = os.path.join('{python path}}', 'car.png')
-
 class Car(object):
 
-    def __init__(self, name):
-        self.name = name
+    def __init__(self, displayName, imageName):
+        self.name = imageName
+        img_path = os.path.join('/home/jay/pycharmProjects/MathsRacer/images/', imageName)
         self.image = pygame.image.load(img_path)
         # starting position
         self.x = 5

@@ -4,12 +4,13 @@ import raceHelper
 import car
 
 pygame.init()
-screen = pygame.display.set_mode((500, 500))
+screen = pygame.display.set_mode((1000, 500))
+clock = pygame.time.Clock()
 done = False
 
 # initial setup
-player1 = car.Car('Player 1')
-player2 = car.Car('Player 2')
+player1 = car.Car('Player 1', 'car_1.png')
+player2 = car.Car('Player 2', 'car_2.png')
 # set player2 to appear below player1
 player2.set_position(player2.x, player1.y+50)
 
@@ -20,7 +21,8 @@ while not done:
         if event.type == pygame.QUIT:
             done = True
 
-    # fetch asum for the current player
+    # fetch a sum for the current player
+    sum = sumHelper.get_next_sum()
 
     # set the x/y based on sum answer
 
@@ -28,7 +30,7 @@ while not done:
     # fill screen white
     screen.fill((255, 255, 255))
 
-    # draw start and finsih lines
+    # draw start and finish lines
 
 
 
@@ -37,10 +39,11 @@ while not done:
 
 
     # draw players
-
+    player1.draw(screen)
+    player2.draw(screen)
 
     pygame.display.flip()
-    pygame.time.clock.tick(60)
+    clock.tick(60)
 
     # has a player won?
 
