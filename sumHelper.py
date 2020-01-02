@@ -11,8 +11,9 @@ def get_next_sum() -> dict:
     """
 
     sum = {'operator': fetch_operator()}
-    sum['values'] = fetch_integers_for_operator(sum['operator'][0])
+    sum['values'] = fetch_integers_for_operator(sum['operator'])
     sum['answer'] = calculate_answer(sum)
+
     return sum
 
 
@@ -28,7 +29,7 @@ def calculate_answer(sum: dict) -> int:
     elif '*' == operator:
         return sum['values'][0] * sum['values'][1]
 
-    raise ValueError('Operator: ' + operator + 'is invalid')
+    raise ValueError('Operator: ' + operator + ' is invalid')
 
 
 def fetch_integers_for_operator(operator: str) -> tuple:
@@ -69,9 +70,6 @@ def fetch_integers_for_operator(operator: str) -> tuple:
             while value2 > config['max_multiple_value']:
                 value2 = fetch_random_number()
 
-    else:
-        raise ValueError('Operator: ' + operator + 'is invalid')
-
     return value1, value2
 
 
@@ -87,4 +85,4 @@ def fetch_random_number() -> int:
     """
     fetch a number randomly from the list of available numbers
     """
-    return random.choice(config['sum_numbers'])
+    return random.randint(1,20)

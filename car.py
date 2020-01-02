@@ -10,6 +10,7 @@ class Car(object):
         # starting position
         self.x = 5
         self.y = 350
+        self.increment = 50
 
     def set_position(self, x, y):
         self.x = x

@@ -5,6 +5,7 @@ import car
 
 pygame.init()
 screen = pygame.display.set_mode((1000, 500))
+pygame.display.set_caption('Maths Racer!')
 clock = pygame.time.Clock()
 done = False
 
