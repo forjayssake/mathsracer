@@ -7,7 +7,6 @@ gameConfig = {
     'sum_operators': {
         '+': 'Add',
         '-': 'Subtract',
-        '/': 'Divide',
         '*': 'Multiply'
     },
 

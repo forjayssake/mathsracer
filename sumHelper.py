@@ -48,27 +48,14 @@ def fetch_integers_for_operator(operator: str) -> tuple:
         if value1 != value2 and value2 > value1:
             return value2, value1
 
-    elif '/' == operator:
-        # division should always result in an integer
-        while not isinstance(value1 / value2, int):
-            value1 = fetch_random_number()
-            value2 = fetch_random_number()
-            # and alway divide the larger number by the smaller
-            if value1 != value2 and value2 > value1:
-                temp = value1
-                value1 = value2
-                value2 = temp
-
     elif '*' == operator:
         # at least one value must be <= max_multiple_value
         if value1 > config['max_multiple_value']:
-            while value1 > config['max_multiple_value']:
-                value1 = fetch_random_number()
+            value1 = fetch_random_number(config['max_multiple_value'])
 
             return value1, value2
         elif value2 > config['max_multiple_value']:
-            while value2 > config['max_multiple_value']:
-                value2 = fetch_random_number()
+            value2 = fetch_random_number(config['max_multiple_value'])
 
     return value1, value2
 
@@ -81,8 +68,8 @@ def fetch_operator() -> tuple:
     return random.choice(list(config['sum_operators'].keys()))
 
 
-def fetch_random_number() -> int:
+def fetch_random_number(max = 20) -> int:
     """
     fetch a number randomly from the list of available numbers
     """
-    return random.randint(1,20)
+    return random.randint(1, max)

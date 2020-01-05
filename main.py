@@ -22,6 +22,14 @@ while not done:
         if event.type == pygame.QUIT:
             done = True
 
+    pressed = pygame.key.get_pressed()
+    if pressed[pygame.K_LEFT]:
+        player1.x = player1.x -player1.increment
+        player1.draw(screen)
+    if pressed[pygame.K_RIGHT]:
+        player1.x = player1.x + player1.increment
+        player1.draw(screen)
+
     # fetch a sum for the current player
     sum = sumHelper.get_next_sum()
 
