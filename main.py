@@ -4,12 +4,15 @@ import raceHelper
 import car
 
 pygame.init()
-screen = pygame.display.set_mode((1000, 500))
+screenWidth:int = 1000
+screenHeight:int = 500
+screen = pygame.display.set_mode((screenWidth, screenHeight))
 pygame.display.set_caption('Maths Racer!')
 clock = pygame.time.Clock()
 done = False
 
 # initial setup
+playerWidth:int = 150
 player1 = car.Car('Player 1', 'car_1.png')
 player2 = car.Car('Player 2', 'car_2.png')
 # set player2 to appear below player1
@@ -23,10 +26,10 @@ while not done:
             done = True
 
     pressed = pygame.key.get_pressed()
-    if pressed[pygame.K_LEFT]:
+    if pressed[pygame.K_LEFT] and (player1.x - player1.increment > 0):
         player1.x = player1.x -player1.increment
         player1.draw(screen)
-    if pressed[pygame.K_RIGHT]:
+    if pressed[pygame.K_RIGHT] and ((player1.x + player1.increment + playerWidth) < screenWidth):
         player1.x = player1.x + player1.increment
         player1.draw(screen)
 
